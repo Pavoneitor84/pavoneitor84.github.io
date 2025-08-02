@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoQ'zuchi</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+      color: #3e2723;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .card {
+      background: #ffe0b2;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ff7043;
+      color: white;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 90px;
+      margin-right: 1rem;
+    }
+
+    .header-text h1 {
+      font-size: 3rem;
+      margin: 0;
+      font-family: 'Verdana', sans-serif;
+    }
+
+    nav {
+      background: #ffab91;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 1rem;
+      font-weight: bold;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: #ffe0b2;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      background: #ffcc80;
+    }
+
+        ul.menu {
+      list-style: square;
+      padding-left: 1.5rem;
+      text-align: left;
+      font-size: 1.3rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #3e2723;
+      font-size: 1.8rem;
+    }
+
+    section {
+      padding: 2rem;
+      animation: fadeIn 1s ease-out both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #e65100;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      font-size: 1.8rem;
+      text-align: left;
+      margin: 0 auto;
+      max-width: 800px;
+      padding-left: 2rem;
+    }
+
+.section {
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+.section {
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+.section {
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+.section {
+      padding: 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .image-grid {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .image-grid img {
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .image-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .event-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .event-column {
+      flex: 1 1 300px;
+      background: #fff3e0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 1.6rem;
+      text-align: left;
+    }
+
+    footer {
+      background: #ff7043;
+      color: white;
+      padding: 2rem;
+      font-size: 1.6rem;
+    }
+
+    .alert-button {
+      background: #e65100;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .alert-box {
+      background-color: #fffde7;
+      padding: 2rem;
+      border: 4px dashed #ff7043;
+      font-size: 2rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+  </style>
+  <script>
+    function showComidaInfo() {
+      const box = document.createElement('div');
+      box.className = 'alert-box';
+      box.innerHTML = '📞 Llama al <strong>776-124-32-89</strong> o pregunta a un empleado para conocer el menú de hoy. ¡Gracias por tu preferencia!';
+      document.querySelector('#comida').appendChild(box);
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="qzuchi.jpg" alt="Logo LoQ'zuchi" />
+    <div class="header-text">
+    <div class="header-text">
+      <h1>LoQ'zuchi</h1>
+    </div>
+  </header>
+  <nav>
+    <a href="#desayunos">Desayunos</a>
+    <a href="#comida">Comida del Día</a>
+    <a href="#cena">Cena</a>
+    <a href="#eventos">Eventos</a>
+  </nav>
+
+ <section  class="section" id="desayunos">
+    <div class="card">
+      <h2>Desayunos</h2>
+      <p>Horario: 8:30 am - 11:00 am</p>
+      <p>Lunes a viernes</p>
+      <div>
+        <strong>Chilaquiles:</strong> Verdes o rojos con cecina
+      </div>
+    </div>
+    <div class="image-grid">
+      <img src="omelettes.jpg" alt="Omelette">
+      <img src="molletes.jpg" alt="Molletes">
+      <img src="clásico.jpg" alt="Desayuno Clásico">
+    </div>
+  </section>
+
+  <section class="section" id="comida">
+    <div class="card">
+    <h2> COMIDA DEL DÍA</h2>
+    <p>1:30 pm - 4:00 pm (Lunes a Viernes)</p>
+    <button class="alert-button" onclick="showComidaInfo()">¿Cuál es la comida de hoy?</button>
+  </div>
+  </section>
+
+     <section class="section" id="cena">
+    <div class="card">
+      <h2>Cena</h2>
+      <p>Horario: 7:00 pm - 11:00 pm</p>
+      <p>Miércoles a sábado</p>
+    </div>
+    <div class="card">
+      <h2>Antojitos</h2>
+      <ul class="menu">
+        <li>Tostadas</li>
+        <li>Enchiladas enrolladas</li>
+        <li>Enchiladas extendidas</li>
+        <li>Dobladas</li>
+        <li>Taquitos dorados</li>
+        <li>Gorditas de frijol</li>
+        <li>Molotes de pollo a la mexicana</li>
+        <li>Molotes de pollo en chiltepín</li>
+        <li>Molotes de papa con chorizo</li>
+        <li>Quesadillas fritas:</li>
+        <ul>
+          <li>Chicharrón</li>
+          <li>Mollejas en cacahuate</li>
+          <li>Queso</li>
+          <li>Pollo a la mexicana</li>
+          <li>Pollo en chiltepín</li>
+          <li>Sesos (temporada)</li>
+          <li>Picadillo (temporada)</li>
+        </ul>
+      </ul>
+    </div>
+  </section>
+
+  <section id="eventos">
+    <h2>EVENTOS LOQZUCHI</h2>
+    <div class="event-columns">
+      <div class="event-column">
+        <strong>Antojitos Mexicanos:</strong><br>
+        - A partir de 100 órdenes y el precio depende si es Necaxa o zona fuera<br>
+        - Necaxa orden $30 parejo<br>
+        - Orden de antojitos, 8 piezas<br>
+        - Orden de quesadillas, 4 piezas<br>
+        - Quesadillas por pieza
+      </div>
+      <div class="event-column">
+        <strong>TAQUIZA:</strong>
+        <ul>
+          <li>Pollo en cacahuate</li>
+          <li>Huevo en chile mora</li>
+          <li>Huevo en chile macho</li>
+          <li>Carne de puerco en adobo</li>
+          <li>Carne de puerco en salsa verde</li>
+          <li>Rajas con pollo y crema</li>
+          <li>Chorizo con papas o nopales</li>
+          <li>Setas empanizadas</li>
+          <li>Chiles rellenos</li>
+          <li>Pollo a la mexicana</li>
+          <li>Chicharrón en salsa</li>
+          <li>Mollejas en chiltepín</li>
+          <li>Picadillo</li>
+          <li>Bistec en salsa verde</li>
+          <li>Pollo en mole tradicional o verde</li>
+          <li>Salchichas con huevo</li>
+          <li>Alambre</li>
+          <li>Tinga de pollo</li>
+          <li>Arroz con huevo duro</li>
+          <li>Bistec con nopales</li>
+        </ul>
+        <strong>Cortesía:</strong>
+        <ul>
+          <li>Ensalada de nopales</li>
+          <li>Frijoles</li>
+          <li>Salsas</li>
+        </ul>
+      </div>
+      <div class="event-column">
+        <strong>Mixiote:</strong>
+        <ul>
+          <li>Mixiote</li>
+          <li>Frijoles refritos</li>
+          <li>Espagueti o arroz</li>
+          <li>Salsas</li>
+        </ul>
+        <strong>Taquitos dorados en vaso:</strong><br>
+        - 4 o 5 taquitos por vaso<br>
+        - Salsa, lechuga, cebolla, queso<br>
+        <br>
+        <strong>También preparamos para tu fiesta:</strong><br>
+        - Arroz rojo<br>
+        - Frijoles refritos<br>
+        - Salsas
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    ¡Gracias por tu visita!<br>
+    📞 Teléfono: 776-124-32-89<br>
+  </footer>
+</body>
+</html>
